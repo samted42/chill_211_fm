@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>Untitled Project</title><meta name="title" content="Untitled Project"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./style.css"><script src="https://cdn.jsdelivr.net/npm/es-module-shims@1.10.0/dist/es-module-shims.js" async=""></script><script type="importmap">{
+  "imports": {}
+}</script></head><body>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071c38">
+  <title>CHILL 211FM — Listen Live</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 32px 18px;
+      display: grid; place-items: center;
+      font-family: Arial, sans-serif; color: #fff;
+      background: linear-gradient(145deg, #071c38, #087f91);
+    }
+    main {
+      width: min(100%, 440px); padding: 32px 24px;
+      text-align: center; border-radius: 24px;
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 16px 48px #00142866;
+    }
+    img { width: min(100%, 300px); border-radius: 16px; }
+    h1 { margin: 22px 0 8px; }
+    p { color: #e3f6f7; }
+    a, button {
+      display: inline-block; margin: 10px 5px; padding: 13px 20px;
+      border: 0; border-radius: 999px; font-size: 16px;
+      font-weight: bold; text-decoration: none; cursor: pointer;
+    }
+    .listen { color: #071c38; background: #fff; }
+    .share { color: #fff; background: #087f91; }
+  </style>
+
+
+  <main>
+    <img src="logo.png" alt="CHILL 211FM logo">
+    <h1>CHILL 211FM</h1>
+    <p>Your place to chill. Listen live online.</p>
+    <a class="listen" href="https://chill211fm.radiostream321.com/" target="_blank" rel="noopener">▶ Listen Live</a>
+    <button class="share" onclick="shareStation()">Share Station</button>
+  </main>
+
+  <script>
+    async function shareStation() {
+      const data = {
+        title: "CHILL 211FM",
+        text: "Listen live to CHILL 211FM",
+        url: location.href
+      };
+      if (navigator.share) {
+        await navigator.share(data);
+      } else {
+        await navigator.clipboard.writeText(location.href);
+        alert("Station link copied!");
+      }
+    }
+  </script>
+
+<script src="./script.js"></script></body></html>
